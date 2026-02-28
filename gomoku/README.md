@@ -1,36 +1,35 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Gomoku（五目並べ）
 
-## Getting Started
+Next.js 16 (App Router) + React 19 + TypeScript + Tailwind CSS v4 で構築。
 
-First, run the development server:
+## フォルダ構成
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+```
+gomoku/
+├── app/                  # Next.js App Router（ルーティングのみ）
+├── components/           # 共通UIコンポーネント
+├── features/             # 機能・ドメイン単位
+│   ├── board/
+│   ├── game/
+│   └── player/
+├── hooks/                # 共通hooks
+├── libs/                 # 外部ライブラリのラッパー等
+├── types/                # 共通型定義
+├── const/                # 共通定数
+└── utils/                # 共通ユーティリティ
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **`app/`** はルーティングと layout に専念し、ロジックは持たない
+- **`features/`** に機能固有のものを全部入れる（components, hooks, types, logic 等）
+- `features/` の外にあるものは feature 横断で使う共通コード
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 開発
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+pnpm install    # 依存関係のインストール
+pnpm dev        # 開発サーバー起動
+pnpm build      # プロダクションビルド
+pnpm lint       # ESLint 実行
+pnpm run test         # Vitest 全テスト実行
+pnpm run test パス    # 特定ファイルのテスト実行
+```
