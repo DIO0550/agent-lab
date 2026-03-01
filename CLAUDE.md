@@ -38,12 +38,13 @@ gomoku/
 
 ```bash
 # gomoku/
-pnpm install          # 依存関係のインストール
-pnpm dev              # 開発サーバー起動
-pnpm build            # プロダクションビルド
-pnpm lint             # ESLint 実行（eslint-config-next/core-web-vitals + typescript）
-pnpm run test         # Vitest 全テスト実行
-pnpm run test パス    # 特定ファイルのテスト実行
+pnpm install              # 依存関係のインストール
+pnpm run dev              # 開発サーバー起動
+pnpm run build            # プロダクションビルド
+pnpm run lint             # ESLint 実行（eslint-config-next/core-web-vitals + typescript）
+pnpm run typecheck        # TypeScript 型チェック（tsc --noEmit）
+pnpm run test             # Vitest 全テスト実行
+pnpm run test パス        # 特定ファイルのテスト実行
 ```
 
 ## Development Environment
