@@ -26,10 +26,11 @@ gomoku/
 ## 開発
 
 ```bash
-pnpm install    # 依存関係のインストール
-pnpm dev        # 開発サーバー起動
-pnpm build      # プロダクションビルド
-pnpm lint       # ESLint 実行
-pnpm run test         # Vitest 全テスト実行
-pnpm run test パス    # 特定ファイルのテスト実行
+pnpm install              # 依存関係のインストール
+pnpm run dev              # 開発サーバー起動
+pnpm run build            # プロダクションビルド
+pnpm run lint             # ESLint 実行
+pnpm run typecheck        # TypeScript 型チェック（tsc --noEmit）
+pnpm run test             # Vitest 全テスト実行
+pnpm run test パス        # 特定ファイルのテスト実行
 ```
